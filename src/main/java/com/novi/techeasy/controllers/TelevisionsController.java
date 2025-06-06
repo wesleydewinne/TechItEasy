@@ -22,9 +22,19 @@ public class TelevisionsController {
         return ResponseEntity.ok(database.get(id));
     }
 
-    @PostMapping
+    @PostMapping("/{id}")
     public ResponseEntity<String> postTelevisions(@RequestBody String televisions) {
         return ResponseEntity.created(null).build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> putTelevisions(@PathVariable int id) {
+        return ResponseEntity.ok("Televisie is bijgewerkt");
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTelevisions(@PathVariable int id) {
+        return ResponseEntity.ok("Televisie is verwijderd");
     }
 
 }
